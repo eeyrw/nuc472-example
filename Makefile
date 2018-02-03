@@ -36,6 +36,10 @@ SRC       =
 ASM_SRC   =
 SRC      += $(APP_DIR)/main.c
 SRC      += $(APP_DIR)/system_NUC472_442.c
+SRC      += $(APP_DIR)/retarget.c
+SRC      += $(APP_DIR)/config_pdma.c
+SRC      += $(APP_DIR)/descriptors.c
+SRC      += $(APP_DIR)/usbd_audio.c
 
 # user include
 INCLUDE_DIRS  = $(APP_DIR)
@@ -57,7 +61,7 @@ MC_FLAGS = -mcpu=$(MCU)
 
 AS_FLAGS = $(MC_FLAGS) -g -gdwarf-2 -mthumb  -Wa,-amhls=$(<:.s=.lst)
 CP_FLAGS = $(MC_FLAGS) $(OPT) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(DEFS)
-LD_FLAGS = $(MC_FLAGS) -g -gdwarf-2 -mthumb -nostartfiles -Xlinker --gc-sections -T$(LINK_SCRIPT) -Wl,-Map=$(PROJECT_NAME).map,--cref,--no-warn-mismatch
+LD_FLAGS = $(MC_FLAGS) -g -gdwarf-2 -mthumb -nostartfiles -Xlinker --gc-sections -specs=nosys.specs -T$(LINK_SCRIPT) -Wl,-Map=$(PROJECT_NAME).map,--cref,--no-warn-mismatch 
 
 #
 # makefile rules

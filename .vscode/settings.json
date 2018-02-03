@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "nuc472_442.h": "c"
+        "nuc472_442.h": "c",
+        "usbd_audio.h": "c"
     }
 }

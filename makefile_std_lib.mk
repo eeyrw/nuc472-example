@@ -17,6 +17,10 @@ SRC  += $(PERIPH_STD_SRC_DIR)/clk.c
 SRC  += $(PERIPH_STD_SRC_DIR)/gpio.c
 SRC  += $(PERIPH_STD_SRC_DIR)/fmc.c
 SRC  += $(PERIPH_STD_SRC_DIR)/sys.c
+SRC  += $(PERIPH_STD_SRC_DIR)/i2s.c
+SRC  += $(PERIPH_STD_SRC_DIR)/usbd.c
+SRC  += $(PERIPH_STD_SRC_DIR)/uart.c
+SRC  += $(PERIPH_STD_SRC_DIR)/pdma.c
 
 # include directories
 INCLUDE_DIRS += $(STM32F1_CORE_DIR)

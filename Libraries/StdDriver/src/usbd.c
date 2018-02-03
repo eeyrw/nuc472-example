@@ -40,12 +40,8 @@ static uint8_t g_usbd_UsbAltInterface = 0;
 static uint8_t g_usbd_EnableTestMode = 0;
 static uint8_t g_usbd_TestSelector = 0;
 
-#ifdef __ICCARM__
-#pragma data_alignment=4
+#pragma pack (4) 
 static uint8_t g_usbd_buf[12];
-#else
-__align(4) static uint8_t g_usbd_buf[12];
-#endif
 
 
 uint8_t g_usbd_Configured = 0;
